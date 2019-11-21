@@ -45,7 +45,6 @@
 		methods: {
 			getData() {
 				getHomeData().then(res => {
-					// console.log(statusCode)
 					console.log(res)
 					this.bannerList = res.data.swiperList
 					this.categoryList = res.data.categoryList

@@ -40,7 +40,7 @@
 					background-color: rgba(255, 255, 255, 1);
 					transition: all 0.3s ease-out;
 			
-					&.on {
+					&.show {
 						width: (100%/3);
 					}
 				}
@@ -57,7 +57,7 @@
 				</swiper-item>
 			</swiper>
 			<view class="indicator">
-				<view :class="{'on':currentIndex >= index}" class="dots" v-for="(swiper,index) in bannerList" :key="index"></view>
+				<view :class="{'show':currentIndex >= index}" class="dots" v-for="(swiper,index) in bannerList" :key="index"></view>
 			</view>
 		</view>
 	</view>
