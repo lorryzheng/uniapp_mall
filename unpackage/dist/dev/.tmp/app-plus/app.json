@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/Home/home",
+    "pages/Category/category",
+    "pages/Cart/cart",
+    "pages/Information/information",
+    "pages/User/user"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#131313",
+    "selectedColor": "#ed3a4a",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/Home/home",
+        "iconPath": "static/tabBar/home-off.png",
+        "selectedIconPath": "static/tabBar/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/Category/category",
+        "iconPath": "static/tabBar/category-off.png",
+        "selectedIconPath": "static/tabBar/category.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/Information/information",
+        "iconPath": "static/tabBar/information-off.png",
+        "selectedIconPath": "static/tabBar/information.png",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/Cart/cart",
+        "iconPath": "static/tabBar/cart-off.png",
+        "selectedIconPath": "static/tabBar/cart.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/User/user",
+        "iconPath": "static/tabBar/user-off.png",
+        "selectedIconPath": "static/tabBar/user.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "DangDang_mall",
+  "compilerVersion": "2.3.3",
+  "usingComponents": {}
+}

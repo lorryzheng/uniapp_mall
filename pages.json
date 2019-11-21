@@ -4,6 +4,7 @@
 			"path": "pages/Home/home",
 			"style": {
 				"navigationBarTitleText": "首页",
+				// 沉浸式状态栏
 				"app-plus": {
 					"titleNView": false,
 					"bounce": "none"
