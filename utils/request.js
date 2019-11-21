@@ -1,29 +1,30 @@
-function request(url, options) {
+export default function request(url, options={}) {
 	
 	const baseURL = "https://uniapp-interface.herokuapp.com/"
-	
-	if(method && method == 'POST') {
-		header = {"content-type":"application/x-www-form-urlencoded"}
+	const newOptions = {...options}
+	newOptions.header = {}
+	if(newOptions && newOptions.method == 'POST') {
+		newOptions.header = {"content-type":"application/x-www-form-urlencoded"}
 	}
 	
-	return new Promise((reject,resolve) => {
+	return new Promise((resolve,reject) => {
 		uni.showLoading({
 			title: "加载中...",
 			mask: true
 		})
 		uni.request({
 			url: baseURL + url,
-			method: options.method || "GET",
-			data: options.body || {},
-			header: header,
+			method: newOptions.method || "GET",
+			data: newOptions.body || {},
+			header: newOptions.header,
 			success: res => {
-				if(res.code && res.code != 200){
+				console.log(res)
+				if(res.statusCode && res.statusCode != 200){
 					uni.showModal({
-						content:res.msg
+						content:res.data.msg
 					})
-					return;
-				}else {
-					resolve res.data
+				}else if(res.statusCode == 200){
+					resolve(res.data)
 				}
 			},
 			fail: (err) => {
@@ -35,5 +36,5 @@ function request(url, options) {
 				uni.hideLoading()
 			}
 		})
-	})
+	}).catch((e) => {})
 }

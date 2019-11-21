@@ -1,8 +1,17 @@
 <style lang='scss'>
+	.place_status {
+		position: fixed;
+		wdith: 100%;
+		top: 0;
+		left: 0;
+		height: 0;
+		/* #ifdef APP-PLUS */
+		height: var(--status-bar-height);
+		/* #endif */
+	}
 	.header {
 		width: 100%;
-		box-sizing: border-box;
-		padding: 20upx;
+		padding: 26upx 0;
 		display: flex;
 		align-items: center;
 		.location {
@@ -54,17 +63,20 @@
 	}
 </style>
 <template>
-	<view class='header'>
-		<view class='location'>
-			<i class="iconfont icon-location"></i>
-			<view class="city">{{city}}</view>
-		</view>
-		<view class="search">
-			<input type="text" placeholder="请输入搜索内容..." placeholder-style="color:#c0c0c0">
-			<i class='iconfont icon-search'></i>
-		</view>
-		<view class="msg">
-			<i class='iconfont icon-mark'></i>
+	<view>
+		<view class='place_status'></view>
+		<view class='header'>
+			<view class='location'>
+				<i class="iconfont icon-location"></i>
+				<view class="city">{{city}}</view>
+			</view>
+			<view class="search">
+				<input type="text" placeholder="请输入搜索内容..." placeholder-style="color:#c0c0c0">
+				<i class='iconfont icon-search'></i>
+			</view>
+			<view class="msg">
+				<i class='iconfont icon-mark'></i>
+			</view>
 		</view>
 	</view>
 </template>
