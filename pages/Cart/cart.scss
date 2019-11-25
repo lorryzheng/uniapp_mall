@@ -1,0 +1,264 @@
+
+.cart-edit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80rpx;
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.cart-num {
+    font-size: 28rpx;
+    color: #000;
+}
+
+.cart-edit-btn {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.cart-list-box {
+    background: #fff;
+}
+
+.cart-shop {
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    height: 74rpx;
+    background: #f9fafb;
+}
+
+.shop-name {
+    font-size: 28rpx;
+    color: #131313;
+    padding: 0 20rpx;
+}
+
+.cart-item {
+    /* display: flex;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    background: #fff; */
+}
+
+.cart-item-movable {
+    width: 750rpx;
+    height: 220rpx;
+    background: fff;
+    overflow: hidden;
+}
+
+.cart-item-movable-view {
+    display: flex;
+    align-items: center;
+    width: 934rpx;
+    height: 220rpx;
+}
+
+.cart-main-box {
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    width: 750rpx;
+    height: 220rpx;
+    box-sizing: border-box;
+}
+
+.cart-delete {
+    width: 184rpx;
+    height: 220rpx;
+    line-height: 220rpx;
+    text-align: center;
+    background: #da2f20;
+    font-size: 30rpx;
+    color: #fff;
+}
+
+.goods-img-box {
+    width: 180rpx;
+    height: 180rpx;
+    overflow: hidden;
+    margin: 0 20rpx;
+}
+
+.goods-img-box image {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.goods-info-box {
+    min-width: 1rpx;
+    flex: 1;
+}
+
+.goods-name {
+    font-size: 30rpx;
+    color: #131313;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.goods-format {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.goods-label {
+    margin-top: 10rpx;
+    width: 105rpx;
+}
+
+.goods-other-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10rpx;
+}
+
+.goods-price {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #da2f20;
+}
+
+.balance-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-top: 1rpx solid #eee;
+}
+
+.all-select {
+    margin: 0 30rpx;
+}
+
+.all-select-name {
+    font-size: 28rpx;
+    color: #131313;
+}
+
+.balance-info {
+    flex: 1;
+    text-align: right;
+    padding: 0 20rpx;
+}
+
+.all-price {
+    font-size: 28rpx;
+    color: #131313;
+}
+
+.all-price text {
+    font-weight: 600;
+    color: #da2f20;
+}
+
+.ohter-info-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10rpx;
+}
+
+.service-price {
+    font-size: 24rpx;
+    color: #888;
+}
+
+.service-price text {
+    font-weight: 600;
+    color: #131313;
+}
+
+.real-price {
+    font-size: 24rpx;
+    color: 888;
+    margin-left: 20rpx;
+}
+
+.real-price text {
+    font-weight: 600;
+    color: #131313;
+}
+
+.banlance-btn {
+    width: 144rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+    background: #000;
+}
+
+.delete-btn {
+    width: 144rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+    background: #da2f20;
+}
+
+.goods-num-input {
+    display: flex;
+    align-items: center;
+    width: 140rpx;
+    background: #e5e5e5;
+    border-radius: 4rpx;
+}
+
+.minus {
+    width: 40rpx;
+    height: 40rpx;
+    background-image: url('https://mozi.bailingyoupin.com/static/images/wx_sm/goods/minus-icon.png');
+    background-size: 17rpx 3rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.add {
+    width: 40rpx;
+    height: 40rpx;
+    background-image: url('https://mozi.bailingyoupin.com/static/images/wx_sm/goods/add-icon.png');
+    background-size: 17rpx 17rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.num-input {
+    flex: 1;
+    min-width: 1rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color: #131313;
+    text-align: center;
+    background: #f1f1f1;
+}
+
+.empty-tips {
+    padding: 100rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.cart-tips {
+    height: 54rpx;
+    line-height: 54rpx;
+    text-align: center;
+    background: #ffbab8;
+    font-size: 26rpx;
+    color: #fff;
+}

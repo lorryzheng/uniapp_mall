@@ -1,13 +1,13 @@
 <template>
 <view>
     <swiper class='img-swiper-box' indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-active-color="#fff" circular="true">
-        <swiper-item class="img-swiper-item" v-for='(item,index) in swiperImg' :key='index'>
-            <image class="slide-image" :src="item.link" mode="aspectFill" />
+        <swiper-item class="img-swiper-item" v-for='(item,index) in swiperList' :key='index'>
+            <image class="slide-image" :src="item" mode="aspectFill" />
         </swiper-item>
     </swiper>
 
     <view class="information-list">
-        <view class='empty-tips' v-if='informationList.length == 0'>暂无数据</view>
+        <!-- <view class='empty-tips' v-if='informationList.length == 0'>暂无数据</view> -->
         <view class="information-item" v-for='(item,index) in informationList' :key='index'>
             <view class="information-info">
                 <view class="information-name">{{item.title}}</view>
@@ -21,6 +21,25 @@
 </template>
 
 <script>
+	export default {
+		data() {
+			return {
+				swiperList:[
+					"https://mozi.bailingyoupin.com/static/images/wx_sm/source/information-img.png",
+					"https://mozi.bailingyoupin.com/static/images/wx_sm/source/source-index-1.png",
+					"https://mozi.bailingyoupin.com/static/images/wx_sm/source/information-img.png"
+				],
+				informationList: [
+					{
+						title: 'test',
+						information_class: '司马',
+						add_time: '21019-11-29',
+						img: 'https://mozi.bailingyoupin.com/static/images/wx_sm/source/source-index-1.png'
+					}
+				]
+			}
+		}
+	}
 </script>
 
 <style>
@@ -34,12 +53,12 @@
 	    width: 710rpx;
 	    height: 380rpx;
 	    margin: 0 auto;
-	    border-radius: 10rpx;
+	    border-radius: 6rpx;
 	}
 	
 	.information-list {
 	    margin-top: 66rpx;
-	    padding: 0 20rpx;
+	    padding: 0 24rpx;
 	}
 	
 	.information-item {
@@ -84,8 +103,8 @@
 	.information-img {
 	    width: 220rpx;
 	    height: 166rpx;
-	    border-radius: 10rpx;
-	    margin-left: 20rpx;
+	    border-radius: 6rpx;
+	    margin-left: 24upx;
 	}
 	
 	.empty-tips {
