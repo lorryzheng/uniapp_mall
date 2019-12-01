@@ -1,3 +1,65 @@
+<template>
+	<view>
+		<searchHeader />
+		<view class='category'>
+			<!-- 左侧导航 -->
+			<scroll-view scroll-y='true' class="category_left">
+				<view
+					v-for="(item,index) in categoryList"
+					:key='index'
+					class='row'
+					:class="{'active': index == currentIndex}"
+				>
+					<view class='col'>{{item.title}}</view>
+				</view>
+			</scroll-view>
+			<!-- 右侧内容 -->
+			<scroll-view scroll-y='true' class="category_right">
+				<view
+					v-for="(itemList,index) in categoryList"
+					:key="index"
+					class='category_right_box'
+				>
+					<view class="label">热门商品</view>
+					<view class="list">
+						<view v-for="(item,index) in itemList.list" class='list_item'>
+							<img :src="'/static/img/category/list/' + item.img" alt="">
+							<view class="name">
+								{{item.name}}
+							</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</template>
+
+<script>
+	import searchHeader from '@/components/searchHeader.vue'
+	import { getCategory } from '@/api/home.js'
+	export default {
+		components: {
+			searchHeader
+		},
+		data() {
+			return {
+				categoryList: [],
+				currentIndex: 0
+			}
+		},
+		onLoad() {
+			this.getData()
+		},
+		methods: {
+			getData() {
+				getCategory().then(res => {
+					this.categoryList = res.data
+				})
+			}
+		}
+	}
+</script>
 <style lang='scss'>
 	.category {
 		display: flex;
@@ -38,17 +100,25 @@
 				width: 100%;
 				.label {
 					width: 100%;
+					font-size: 28upx;
+					font-weight: bold;
+					color: #333;
 				}
 				.list {
 					display: flex;
-					justify-content: space-between;
-					&_item {	
-						flex: 1;
+					flex-wrap: wrap;
+					&_item {
+						width: 33.3%;
+						text-align: center;
+						box-sizing: border-box;
+						padding: 10px;
 						img {
-							
+							width: 60px;
+							height: 60px;
 						}
 						.name {
-							font-size: 28upx;
+							font-size: 24upx;
+							color: #333;
 						}
 					}
 				}
@@ -56,65 +126,3 @@
 		}
 	}
 </style>
-<template>
-	<view>
-		<searchHeader />
-		<view class='category'>
-			<!-- 左侧导航 -->
-			<scroll-view scroll-y='true' class="category_left">
-				<view
-					v-for="(item,index) in categoryList"
-					:key='index'
-					class='row'
-					:class="{'active': index == currentIndex}"
-				>
-					<view class='col'>{{item.title}}</view>
-				</view>
-			</scroll-view>
-			<!-- 右侧内容 -->
-			<scroll-view scroll-y='true' class="category_right">
-				<view
-					v-for="(itemList,index) in categoryList"
-					:key="index"
-					class='category_right_box'
-				>
-					<view class="label">热门商品</view>
-					<view class="list">
-						<view v-for="(item,index) in itemList.list" class='list_tem'>
-							<img :src="'/static/img/category/list/' + item.img" alt="">
-							<view class="name">
-								{{item.name}}
-							</view>
-						</view>
-					</view>
-				</view>
-			</scroll-view>
-		</view>
-	</view>
-</template>
-
-<script>
-	import searchHeader from '@/components/searchHeader.vue'
-	import { getCategory } from '@/api/home.js'
-	export default {
-		components: {
-			searchHeader
-		},
-		data() {
-			return {
-				categoryList: [],
-				currentIndex: 0
-			}
-		},
-		onLoad() {
-			this.getData()
-		},
-		methods: {
-			getData() {
-				getCategory().then(res => {
-					this.categoryList = res.data
-				})
-			}
-		}
-	}
-</script>
